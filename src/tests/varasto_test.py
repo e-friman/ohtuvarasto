@@ -54,7 +54,7 @@ class TestVarasto(unittest.TestCase):
     def test_str(self):
         self.varasto.lisaa_varastoon(6)
 
-        self.assertAlmostEqual(self.varasto.__str__(), "saldo = 6, vielä tilaa 4")
+        self.assertAlmostEqual(self.varasto.__str__(), "saldo = 6, vielä tilaa 4") # pylint: disable=unnecessary-dunder-call, line-too-long
 
     def test_liian_vahan_lisays(self):
         self.varasto.lisaa_varastoon(-4)
@@ -75,4 +75,3 @@ class TestVarasto(unittest.TestCase):
         self.varasto = Varasto(10, -2)
 
         self.assertAlmostEqual(self.varasto.saldo, 0.0)
-    
